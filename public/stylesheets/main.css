@@ -1,0 +1,58 @@
+.jumbotron{
+    margin-bottom: 5px;
+}
+.headline{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+.commentcard{
+    margin-bottom: 20px;
+}
+
+
+.indexcards{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+} 
+
+
+.delete-form{
+    display: inline;
+}
+
+.lead{
+    text-align: center;
+}
+
+#map{
+    width: 100%; 
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.add-to-map{
+    display: none;
+}
+
+#addMapPrompt{
+    font-weight: bold;
+}
+
+/* styling for forgot & reset page */
+.pwforgot {
+    width: 50%;
+    margin: 25px auto;
+}
+
+
+/* for fixed navbar */
+body{
+    padding-top: 70px;
+}

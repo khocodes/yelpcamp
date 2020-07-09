@@ -1,0 +1,49 @@
+<%- include('./partials/header')%> 
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Sign Up!</h1>
+    </div>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input class="form-control" type="text" name="firstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input class="form-control" type="text" name="lastName">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="avatar">Avatar Image URL</label>
+                <input class="form-control" type="text" name="avatar">
+            </div>
+
+            <div class="form-group">
+                <label for="adminCode">Admin Code</label>
+                <input class="form-control" type="password" name="adminCode">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+            </div>
+        </form>
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
+
+
+
+<%- include('./partials/footer')%> 

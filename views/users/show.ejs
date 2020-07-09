@@ -1,0 +1,31 @@
+<%- include('../partials/header')%> 
+
+<div class="row">
+    <div class="col-md-4">
+        <!--if user's name and avatar defined-->
+        <%if(user.firstName && user.lastName && user.avatar){%>
+            <h2><%= user.firstName+ ' ' + user.lastName%></h2>
+            <div class="card mb-2 p-2">
+                <img class="card-img-top" src="<%= user.avatar %>" alt="user profile image">
+                <div class="card-title m-0"><a href="mailto:<%=user.email%>"><%=user.email%></a></div>
+                <hr class="mt-1 mb-2">
+                <p class="card-text">User Bio: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae quae pariatur eligendi nobis commodi saepe cupiditate maiores corrupti non accusantium consequatur officia laborum iste accusamus possimus asperiores mollitia, nisi itaque laudantium aperiam sit. Aspernatur consequatur optio voluptas officiis laboriosam natus, laudantium, alias in quos eveniet fugiat cumque ex. Enim, eligendi?</p>
+            </div> 
+        <%}%>
+        <p>
+            <a href="/follow/<%=user.id%>"><button class="btn btn-primary">Follow</button></a>
+        </p>
+
+    </div>
+    <div class="col-md-8">
+        <h2><%=user.username%>'s campgrounds:</h2>
+        <ul>
+            <% campgrounds.forEach(function(campground){ %>
+                <li><a href="/campgrounds/<%=campground.id%>"><%= campground.name %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+
+<%- include('../partials/footer')%> 

@@ -1,0 +1,88 @@
+<%- include('../partials/header')%> 
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Create a new Campground</h1>
+        </div>
+        <div style="width: 30%; margin:25px auto;">
+        <!--action = post route-->
+            <form action="/campgrounds" method="POST" enctype="multipart/form-data"> <!--enctype allows us to have file upload feature-->
+                <!--form-group creates space between each input type-->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="campground[name]" id="name" placeholder="Campground name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input class="form-control" type="number" name="campground[price]" id="price" placeholder="Price per night" min="0.01" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <!-- <input class="form-control" type="text" name="image" id="image" placeholder="image url" required> -->
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" name="campground[description]" id="description" placeholder="Brief description of campsite charm" required>
+                </div>
+
+
+                <!--Optional fields to fill out in order to display a map-->
+                <div class="form-group">
+                    <input type="checkbox" name="addmap" id="addmap"> <span id="addMapPrompt">Add a map?</span> 
+                </div>
+
+                <div class="add-to-map">
+                    <p> <em>Please fill out all fields to display a map</em></p>
+                </div>
+
+                <div class="form-group add-to-map">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="campground[location]" id="location" placeholder="ex. Yosemite National Park, CA">
+                </div>
+                <div class="form-group add-to-map">
+                    <label for="latitude">Latitude</label>
+                    <input class="form-control" type="number" name="campground[lat]" id="latitude" placeholder="37.86" step="0.01">
+                </div>
+                <div class="form-group add-to-map">
+                    <label for="longitude">Longitude</label>
+                    <input class="form-control" type="number" name="campground[lng]" id="longitude" placeholder="119.54" step="0.01">
+                </div>
+
+
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/campgrounds">Go Back</a>
+
+        </div>
+    
+    
+    </div>
+
+
+
+
+
+    <script>
+
+        //Display fields if user wants to add a map:
+        var addToMap = document.querySelectorAll('.add-to-map');
+        var checkbox = document.querySelector('#addmap');
+
+        checkbox.addEventListener('change', function(){
+            for(var i =0; i<addToMap.length; i++){
+                if(this.checked){
+                    addToMap[i].style.display = 'block';
+                }
+                else{
+                    addToMap[i].style.display = 'none';
+                }
+            }
+        });
+
+
+    </script>
+
+<%- include('../partials/footer')%> 
